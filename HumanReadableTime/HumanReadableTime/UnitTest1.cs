@@ -35,7 +35,7 @@ namespace HumanReadableTime
 
             var time = TimeSpan.FromSeconds(seconds);
             var years = time.Days / 365;
-            var day = time.Days - years * 365;
+            var day = time.Days % 365;
 
             string year = years == 0 ? "" : $"{years} {(years > 1 ? "years" : "year")}";
             string days = day == 0 ? "" : $", {day} {(day > 1 ? "days" : "day")}";
